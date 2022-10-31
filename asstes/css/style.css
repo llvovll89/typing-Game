@@ -1,0 +1,240 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poor Story', cursive;
+}
+
+:root {
+    --borderLight: #e5e8eb;
+}
+
+.wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.wrap.off {
+    background: #F5F5F7;
+    max-width: 100%;
+}
+
+.container {
+    margin: 1rem;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border: 2px solid var(--borderLight);
+    border-radius: 12px;
+    transition: display .5s linear;
+}
+
+.container.out {
+    display: none;
+    transition: display .5s linear;
+}
+
+.content {
+    display: flex;
+    padding: .75rem;
+    width: 100%;
+    max-width: 480px;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.header {
+    width: 100%;
+    background: #323232;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.word {
+    display: none;
+    font-size: 60px;
+    color: #030303;
+    animation: wordMove 0.5s infinite linear;
+    text-decoration: underline;
+    border-radius: 12px;
+}
+
+.word.word-out{
+    display: block;
+}
+
+input[type="text"]{
+    outline: none;
+}
+
+.word-input {
+    margin-top: 1rem;
+    padding: .5rem;
+    height: 66px;
+    width: 100%;
+    font-size: 1.2rem;
+    transition: .3s all linear;
+    border: 1px solid var(--borderLight);
+}
+
+.word-input:focus {
+    outline: 1px solid skyblue;
+    border: none;
+    font-size: 1.5rem;
+    transition: .3s all linear;
+}
+
+.game-info {
+    /* margin-top: 5rem; */
+    display: flex;
+    padding: 1rem;
+    font-size: 0.8rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--borderLight);
+}
+
+.time, .score {
+    font-size: 16px;
+}
+
+.timer, .point {
+    font-size: 24px;
+}
+
+.btn, .btn2 {
+    margin: 20px auto;
+    position: relative;
+    display: block;
+    width: 95%;
+    height: 66px;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 1.75rem;
+    cursor: pointer;
+    border: 1px solid var(--borderLight);
+}
+
+.loading {
+    color: #333;
+    cursor: not-allowed;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    width: 100%;
+    max-width: 450px;
+    height: 250px;
+    padding: .15rem;
+    background: #FC4C63;
+    border-radius: 20px;
+    color: #FFFFFF;
+}
+
+.modal-inner {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    border: 1px solid white;
+    border-radius: 20px;
+    height: 100%;
+    font-family: 'Poor Story', cursive;
+}
+
+
+.modal.active {
+    z-index: 1000;
+    display: block;
+    opacity: 1;
+    max-width: 95%;
+}
+
+.modal .innerText {
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
+    font-size: 20px;
+    animation: wordMove 0.5s infinite linear;
+}
+
+.restart {
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+    color: #ffffff;
+}
+
+.restart:hover {
+    box-shadow: 0 0 0 ;
+}
+
+@keyframes wordMove {
+    0% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+
+    10% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    100% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+}

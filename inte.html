@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+
+    <title>Typing Game _ V1</title>
+    <link rel="stylesheet" type="text/css" href="./asstes/css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="modal">
+            <div class="modal-inner">
+            <span class="innerText"></span>
+            <button class="btn2 restart">RESTART</button>
+        </div>
+        </div>
+        <div class="container">
+            <div class="header">
+                <h1 class="title">타자연습</h1>
+            </div>
+            <div class="word">
+
+            </div>
+            <div class="content">
+                <div class="word-container">
+                    <input type="text" class="word-input" placeholder="입력해주세용😎">
+                </div>
+                <div class="game-info">
+                    <div class="time">
+                        남은시간 : <span class="timer"></span>초
+                    </div>
+                    <div class="score">
+                        획득점수 : <span class="point"></span>점
+                    </div>
+                </div>
+            </div>
+            <button class="btn loading">게임 불러오는중,,</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./asstes/js/app.js"></script>
+</body>
+
+</html>
